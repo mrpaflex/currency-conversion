@@ -11,7 +11,8 @@ export class CurrencyController {
   async convertCurrency(@Body() payload: CurrentDto): Promise<any> {
     const { amount } = payload;
     const exchangeRate = await this.currencyService.getExchangeRate(payload);
+    return exchangeRate;
 
-    return this.currencyService.convertCurrency(amount, exchangeRate);
+    //return this.currencyService.convertCurrency(amount, exchangeRate);
   }
 }
